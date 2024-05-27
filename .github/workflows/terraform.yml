@@ -14,12 +14,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3 
+        uses: actions/checkout@v3  
 
       - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v2.1.0  
-        with:
-          terraform_version: 1.0.10
+        uses: hashicorp/setup-terraform@v2  
 
       - name: Terraform Init
         run: terraform init
@@ -35,4 +33,3 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: "eu-central-1"
           AWS_ENDPOINT_URL: "http://localhost:4566"
-
